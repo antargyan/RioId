@@ -11,7 +11,8 @@ using RioId.Models;
 
 namespace RioId.Pages.Login
 {
-    [SecurityHeaders]
+    //TODO: to be enabled again after all work done
+    //[SecurityHeaders]
     [AllowAnonymous]
     public class Index : PageModel
     {

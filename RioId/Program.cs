@@ -1,4 +1,6 @@
 ﻿using RioId;
+using RioId.Models;
+using RioId.Services;
 using Serilog;
 
 Log.Logger = new LoggerConfiguration()
@@ -15,6 +17,14 @@ try
         .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}")
         .Enrich.FromLogContext()
         .ReadFrom.Configuration(ctx.Configuration));
+    
+    builder.Services.Configure<SettingsData>(builder.Configuration.GetSection("defaultSettings"));
+
+    builder.Services.AddSingleton<ISettingsProvider,
+        SettingsProvider>();
+
+    builder.Services.AddSingleton<IEmailSender,
+        EmailSender>();
 
     var app = builder
         .ConfigureServices()
