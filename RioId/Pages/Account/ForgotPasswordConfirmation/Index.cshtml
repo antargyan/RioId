@@ -1,0 +1,12 @@
+@page
+@inject IHtmlLocalizer<AppResources> T
+@model RioId.Pages.ForgotPasswordConfirmation.Index
+@{
+    ViewData["Title"] = T["ForgotPasswordConfirmationTitle"];
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p class="text-muted">
+    @T["ForgotPasswordConfirmationText"]
+</p>
