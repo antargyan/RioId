@@ -144,8 +144,8 @@ namespace rioid.Pages.Register
                 {
                     var callbackCode = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     var callbackUrl = Url.EmailConfirmationLink(user.Id.ToString(), callbackCode, Request.Scheme);
-
-                    await emailSender.SendEmailConfirmationAsync(Input.Email, callbackUrl);
+                    //TODO: to fix
+                    //await emailSender.SendEmailConfirmationAsync(Input.Email, callbackUrl);
 
                     await _signInManager.SignInAsync(user, false);
 
