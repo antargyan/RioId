@@ -130,10 +130,10 @@
     <value>Access denied</value>
   </data>
   <data name="AgreeToPrivacyPolicy" xml:space="preserve">
-    <value>I agree to the &lt;a href="{0}" target="_blank"&gt;Terms of service&lt;/a&gt;.</value>
+    <value>I agree to the &lt;a href="{0}" target="_blank"&gt;Privacy Policy&lt;/a&gt;.</value>
   </data>
   <data name="AgreeToTermsOfService" xml:space="preserve">
-    <value>I agree to the &lt;a href="{0}" target="_blank"&gt;Privacy policy&lt;/a&gt;.</value>
+    <value>I agree to the &lt;a href="{0}" target="_blank"&gt;Terms of service&lt;/a&gt;.</value>
   </data>
   <data name="ChangePasswordButton" xml:space="preserve">
     <value>Change password</value>

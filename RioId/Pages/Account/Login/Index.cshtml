@@ -39,7 +39,7 @@
             </div>
 
             <div class="form-group">
-                <a asp-page="./ForgotPassword">@T["ForgotPasswordQuestion"]</a> | <a asp-page="./Register" asp-route-returnUrl="@Model.Input.ReturnUrl">@T["NoAccountQuestion"]</a>
+                <a asp-page="/Account/ForgotPassword/Index">@T["ForgotPasswordQuestion"]</a> | <a asp-page="/Account/Register/Index" asp-route-returnUrl="@Model.Input.ReturnUrl">@T["NoAccountQuestion"]</a>
             </div>
         </form>
     </section>
