@@ -52,24 +52,20 @@
     </div>
 
     <section>
-        <form asp-page="/ExternalLogin/Challenge"
-              asp-route-returnUrl="@Model.Input.ReturnUrl" method="post" class="form-horizontal">
-            <div>
-                <p>
-                    @foreach (var provider in Model.View.VisibleExternalProviders)
-                    {
-                        var lowerName = @provider.DisplayName.ToLowerInvariant();
-
-                        <button type="submit" 
-                            class="btn btn-block btn-social btn-dark btn-@lowerName" 
-                            name="provider" 
-                            value="@provider.DisplayName">
-                            <i class="fab fa-@lowerName"></i> @T[$"LoginWith{provider.DisplayName}"]        
-                        </button>
-                    }
-                </p>
-            </div>
-        </form>
+        <div>
+            <p>
+                @foreach (var provider in Model.View.VisibleExternalProviders)
+                {
+                    var lowerName = @provider.DisplayName.ToLowerInvariant();
+                    <a class="btn btn-block btn-social btn-dark btn-@lowerName"
+                       asp-page="/ExternalLogin/Challenge"
+                       asp-route-scheme="@provider.AuthenticationScheme"
+                       asp-route-returnUrl="@Model.Input.ReturnUrl">
+                        <i class="fab fa-@lowerName"></i> @T[$"LoginWith{provider.DisplayName}"]
+                    </a>
+                }
+            </p>
+        </div>
     </section>
 }
 
