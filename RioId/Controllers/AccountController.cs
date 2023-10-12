@@ -24,6 +24,13 @@ namespace RioId.Controllers
         }
 
         [HttpGet]
+        [Route("/login/")]
+        public IActionResult Login()
+        {
+            return Redirect("~/account/login");
+        }
+
+        [HttpGet]
         [Route("/manage/")]
         public IActionResult Profile()
         {
@@ -44,7 +51,8 @@ namespace RioId.Controllers
             }
         }
 
-        [Route("/account/logout/")]
+       
+        [Route("/logout/")]
         public async Task<IActionResult> Logout(string logoutId = null)
         {
             var context = await interactions.GetLogoutContextAsync(logoutId);
